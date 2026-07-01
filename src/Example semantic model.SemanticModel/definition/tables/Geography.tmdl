@@ -1,0 +1,95 @@
+table Geography
+	lineageTag: a076b4a2-ddec-4392-8630-314097fe0034
+	sourceLineageTag: [dbo].[Geography]
+
+	column GeographyID
+		dataType: int64
+		isHidden
+		isKey
+		formatString: 0
+		isAvailableInMdx: false
+		lineageTag: c1442ad4-8d86-4ae4-bc06-277c116b334a
+		sourceLineageTag: GeographyID
+		summarizeBy: none
+		sourceColumn: GeographyID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZipCodeBKey
+		dataType: string
+		lineageTag: 3d379eb2-7f0a-4d7d-99cb-6abce795e4fc
+		sourceLineageTag: ZipCodeBKey
+		summarizeBy: none
+		sourceColumn: ZipCodeBKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column County
+		dataType: string
+		lineageTag: 8d6e9dd7-6f6e-43b6-a35c-4117339b02cf
+		sourceLineageTag: County
+		dataCategory: County
+		summarizeBy: none
+		sourceColumn: County
+
+		changedProperty = DataCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 1db96a9f-05cd-48a0-a268-1854e8247b65
+		sourceLineageTag: City
+		dataCategory: City
+		summarizeBy: none
+		sourceColumn: City
+
+		changedProperty = DataCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: cb6c7b22-f25b-4c0c-9acd-d405ef37c07c
+		sourceLineageTag: State
+		dataCategory: StateOrProvince
+		summarizeBy: none
+		sourceColumn: State
+
+		changedProperty = DataCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: 349a36e9-cad3-40b1-9222-5475a8b07432
+		sourceLineageTag: Country
+		dataCategory: Country
+		summarizeBy: none
+		sourceColumn: Country
+
+		changedProperty = DataCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZipCode
+		dataType: string
+		lineageTag: 9783005e-4c04-4983-ac63-58188ab08fd0
+		sourceLineageTag: ZipCode
+		dataCategory: PostalCode
+		summarizeBy: none
+		sourceColumn: ZipCode
+
+		changedProperty = DataCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Geography = entity
+		mode: directLake
+		source
+			entityName: Geography
+			schemaName: dbo
+			expressionSource: 'DirectLake - Example warehouse'
+

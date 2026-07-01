@@ -1,0 +1,46 @@
+table Medallion
+	lineageTag: 276314ca-ae49-4fa9-93a8-f73ecc5df4fa
+	sourceLineageTag: [dbo].[Medallion]
+
+	column MedallionID
+		dataType: int64
+		isHidden
+		isKey
+		formatString: 0
+		isAvailableInMdx: false
+		lineageTag: fe278b45-7698-405d-88dc-332d6259d6de
+		sourceLineageTag: MedallionID
+		summarizeBy: none
+		sourceColumn: MedallionID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MedallionBKey
+		dataType: string
+		isAvailableInMdx: false
+		lineageTag: 31b0348f-68ff-4f6e-bd98-2ce414a82131
+		sourceLineageTag: MedallionBKey
+		summarizeBy: none
+		sourceColumn: MedallionBKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column MedallionCode
+		dataType: string
+		isAvailableInMdx: false
+		lineageTag: f3009551-1ea6-4d4b-867b-17f2c9679488
+		sourceLineageTag: MedallionCode
+		summarizeBy: none
+		sourceColumn: MedallionCode
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Medallion = entity
+		mode: directLake
+		source
+			entityName: Medallion
+			schemaName: dbo
+			expressionSource: 'DirectLake - Example warehouse'
+

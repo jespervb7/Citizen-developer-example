@@ -1,0 +1,46 @@
+table HackneyLicense
+	lineageTag: 6ae31f2e-133b-4d49-83c7-31f55610e78c
+	sourceLineageTag: [dbo].[HackneyLicense]
+
+	column HackneyLicenseID
+		dataType: int64
+		isHidden
+		isKey
+		formatString: 0
+		isAvailableInMdx: false
+		lineageTag: f63c6a62-c04f-47bc-822d-152423e5acaa
+		sourceLineageTag: HackneyLicenseID
+		summarizeBy: none
+		sourceColumn: HackneyLicenseID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column HackneyLicenseBKey
+		dataType: string
+		isAvailableInMdx: false
+		lineageTag: aaaecec5-6e18-4270-bf42-bb0be12389e0
+		sourceLineageTag: HackneyLicenseBKey
+		summarizeBy: none
+		sourceColumn: HackneyLicenseBKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column HackneyLicenseCode
+		dataType: string
+		isAvailableInMdx: false
+		lineageTag: a497d6bc-2e17-4d24-84bf-2c58f8c1d897
+		sourceLineageTag: HackneyLicenseCode
+		summarizeBy: none
+		sourceColumn: HackneyLicenseCode
+
+		annotation SummarizationSetBy = Automatic
+
+	partition HackneyLicense = entity
+		mode: directLake
+		source
+			entityName: HackneyLicense
+			schemaName: dbo
+			expressionSource: 'DirectLake - Example warehouse'
+
