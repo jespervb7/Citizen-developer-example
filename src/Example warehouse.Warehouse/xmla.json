@@ -752,6 +752,117 @@
         ]
       },
       {
+        "name": "Products",
+        "sourceLineageTag": "[dbo].[Products]",
+        "columns": [
+          {
+            "name": "ProductId",
+            "dataType": "int64",
+            "sourceColumn": "ProductId",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "ProductId",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ProductName",
+            "dataType": "string",
+            "sourceColumn": "ProductName",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "ProductName",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Category",
+            "dataType": "string",
+            "sourceColumn": "Category",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Category",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Price",
+            "dataType": "decimal",
+            "sourceColumn": "Price",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "Price",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "StockQuantity",
+            "dataType": "int64",
+            "sourceColumn": "StockQuantity",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "StockQuantity",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CreatedDate",
+            "dataType": "dateTime",
+            "sourceColumn": "CreatedDate",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "CreatedDate",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "Products",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
         "name": "Time",
         "sourceLineageTag": "[dbo].[Time]",
         "columns": [
